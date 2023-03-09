@@ -20,7 +20,8 @@ module LuhnValidator
     check_digit = (10 - multi_nums.sum % 10) % 10
 
     # Another way to check
-    # multi_nums = nums_a[0...-1].reverse.each_slice(2).sum { |a, b = 0| (a * 2 % 10) + (a * 2 / 10) + b }
+    # last_digit = nums_a.pop
+    # multi_nums = nums_a.reverse.each_slice(2).sum { |a, b = 0| (a * 2 % 10) + (a * 2 / 10) + b }
     # check_digit = (10 - multi_nums % 10) % 10
     check_digit == last_digit
   end
